@@ -7,6 +7,11 @@ AddEventHandler("ServerEmoteRequest", function(target, emotename, etype)
     TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
 end)
 
+RegisterServerEvent("ServerEmoteForce")
+AddEventHandler("ServerEmoteForce", function(target, emotename)
+    TriggerClientEvent("ForcePlayEmote", target, emotename)
+end)
+
 RegisterServerEvent("ServerValidEmote")
 AddEventHandler("ServerValidEmote", function(target, requestedemote, otheremote)
     TriggerClientEvent("SyncPlayEmote", source, otheremote, source)

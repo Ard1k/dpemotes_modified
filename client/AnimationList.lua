@@ -1231,6 +1231,7 @@ DP.Emotes = {
     } },
     ["mechanic"] = { "mini@repair", "fixing_a_ped", "Mechanic", AnimationOptions = {
         EmoteLoop = true,
+        ForceEmoteName = 'takedownbydog'
     } },
     ["mechanic2"] = { "mini@repair", "fixing_a_player", "Mechanic 2", AnimationOptions = {
         EmoteLoop = true,
@@ -3212,5 +3213,11 @@ DP.PropEmotes = {
         PropPlacement = { 0.0800, -0.0120, -0.0600, -90.00, 180.00, 69.99 },
         EmoteLoop = false,
         EmoteMoving = true,
+    } },
+}
+
+DP.HiddenForceable = {
+    ["takedownbydog"] = { "creatures@rottweiler@melee@streamed_core@", "victim_takedown_from_front", "takedown animacia", AnimationOptions = {
+        EmoteLoop = false,
     } },
 }

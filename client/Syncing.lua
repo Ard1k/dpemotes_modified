@@ -43,6 +43,30 @@ AddEventHandler("SyncPlayEmote", function(emote, player)
     end
 end)
 
+RegisterNetEvent("ForcePlayEmote")
+AddEventHandler("ForcePlayEmote", function(emote)
+    EmoteCancel()
+    Wait(300)
+    -- wait a little to make sure animation shows up right on both clients after canceling any previous emote
+    if DP.Shared[emote] ~= nil then
+        OnEmotePlay(DP.Shared[emote])
+    elseif DP.Dances[emote] ~= nil then
+        OnEmotePlay(DP.Dances[emote])
+    elseif DP.Expressions[emote] ~= nil then
+        OnEmotePlay(DP.Expressions[emote])
+    elseif DP.Walks[emote] ~= nil then
+        OnEmotePlay(DP.Walks[emote])
+    elseif DP.AnimalEmotes[emote] ~= nil then
+        OnEmotePlay(DP.AnimalEmotes[emote])
+    elseif DP.Emotes[emote] ~= nil then
+        OnEmotePlay(DP.Emotes[emote])
+    elseif DP.PropEmotes[emote] ~= nil then
+        OnEmotePlay(DP.PropEmotes[emote])
+    elseif DP.HiddenForceable[emote] ~= nil then
+        OnEmotePlay(DP.HiddenForceable[emote])
+    end
+end)
+
 RegisterNetEvent("SyncPlayEmoteSource")
 AddEventHandler("SyncPlayEmoteSource", function(emote, player)
     -- Thx to Poggu for this part!

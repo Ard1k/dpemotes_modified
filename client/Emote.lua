@@ -364,6 +364,13 @@ function OnEmotePlay(EmoteName)
         return
     end
 
+    if EmoteName.AnimationOptions and EmoteName.AnimationOptions.ForceEmoteName ~= nil then
+        target, distance = GetClosestPlayer()
+        if (distance ~= -1 and distance < 3) then
+            TriggerServerEvent("ServerEmoteForce", GetPlayerServerId(target), EmoteName.AnimationOptions.ForceEmoteName)
+        end
+    end
+
     if EmoteName.AnimationOptions then
         if EmoteName.AnimationOptions.EmoteLoop then
             MovementType = 1
